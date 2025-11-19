@@ -30,9 +30,7 @@ function makePlayer(name, marker) {
 const displayController = (function () {
     const checkIfWinner = () => {
         for (let i = 0; i < gameboardArr.length; i++) {
-            if (gameboardArr[0] == gameboardArr[0] && gameboardArr[0] == gameboardArr[0]) {
-                console.log(`VICTORY ATTAINED! The winner is ${gameboardArr[0]}`);
-            } else if (gameboardArr[0] == gameboardArr[1] && gameboardArr[1] == gameboardArr[2]) {
+            if (gameboardArr[0] == gameboardArr[1] && gameboardArr[1] == gameboardArr[2]) {
                 console.log(`VICTORY ATTAINED! The winner is ${gameboardArr[2]}`);
             } else if (gameboardArr[3] == gameboardArr[4] && gameboardArr[4] == gameboardArr[5]) {
                 console.log(`VICTORY ATTAINED! The winner is ${gameboardArr[5]}`);
@@ -42,6 +40,8 @@ const displayController = (function () {
                 console.log(`VICTORY ATTAINED! The winner is ${gameboardArr[6]}`);
             } else if (gameboardArr[1] == gameboardArr[4] && gameboardArr[4] == gameboardArr[7]) {
                 console.log(`VICTORY ATTAINED! The winner is ${gameboardArr[7]}`);
+            } else if (gameboardArr[2] == gameboardArr[5] && gameboardArr[5] == gameboardArr[8]) {
+                console.log(`VICTORY ATTAINED! The winner is ${gameboardArr[8]}`);
             } else if (gameboardArr[2] == gameboardArr[4] && gameboardArr[4] == gameboardArr[6]) {
                 console.log(`VICTORY ATTAINED! The winner is ${gameboardArr[6]}`);
             } else if (gameboardArr[0] == gameboardArr[4] && gameboardArr[4] == gameboardArr[8]) {
