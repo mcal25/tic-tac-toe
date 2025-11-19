@@ -27,7 +27,16 @@ function makePlayer(name, marker) {
     return { name, marker };
 }
 
+
+
 const displayController = (function () {
+    let currentTurn = 'X';
+    let gameBoard = document.getElementById('board-container');
+    let boardTiles = document.querySelectorAll('.board-tile');
+    boardTiles.forEach((tile) => tile.addEventListener('click', function() {
+        tile.innerHTML = currentTurn;
+        currentTurn == 'X' ? currentTurn = 'O' : currentTurn = 'X';
+    }));
     const checkIfWinner = () => {
         for (let i = 0; i < gameboardArr.length; i++) {
             if (gameboardArr[0] == gameboardArr[1] && gameboardArr[1] == gameboardArr[2]) {
@@ -62,6 +71,15 @@ const displayController = (function () {
         - "you’re probably going to want an object to control the flow of the game itself."; "displayController"?
             - who's turn is it
             - check for winner every turn (starting after 3rd turn maybe)
+            - how this should work:
+                - once begin button is pressed:
+                    - cursor turns to an x so player knows it's time to make their move
+                    - onClick event is active for the tiles
+                    - when clicked:
+                        - tile populates with a visual x
+                        - cursor changes to an O
+                        - gameBoardArr populates appropriate indice with an 'X'
+                        - who's turn property switches
 */
 
 // check if winner function
