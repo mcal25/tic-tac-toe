@@ -19,9 +19,13 @@
 // |6| |7| |8|
 
 
+
+
 const gameboard = {
     gameboardArr: ['', '', '', '', '', '', '', '', ''],
 };
+
+
 
 function makePlayer(name, marker) {
     return { name, marker };
@@ -35,6 +39,8 @@ const displayController = (function () {
     let boardTiles = document.querySelectorAll('.board-tile');
     boardTiles.forEach((tile) => tile.addEventListener('click', function() {
         tile.innerHTML = currentTurn;
+        gameboard.gameboardArr.splice(tile.id - 1, 1, currentTurn);
+        console.log(gameboard.gameboardArr);
         currentTurn == 'X' ? currentTurn = 'O' : currentTurn = 'X';
     }));
     const checkIfWinner = () => {
