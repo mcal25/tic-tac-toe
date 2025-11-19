@@ -5,12 +5,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tic-Tac-Toe</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bungee+Spice&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <h1 id="title-header">Tic-Tac-Toe</h1>
-
+    <header>
+        <h1 id="title-header">Tic-Tac-Toe</h1>
+        <form method="dialog" id="players-form">
+            <input name="player1-input" type="text" id="player1-input" placeholder="Player 1 (X)">
+            <input name="player2-input" type="text" id="player2-input" placeholder="Player 2 (O)">
+            <button id="start-game-button">Begin</button>
+        </form>
+    </header>
     <div id="board-container">
         <div class="board-tile"></div>
         <div class="board-tile"></div>

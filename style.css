@@ -2,6 +2,37 @@
     background-color: rgb(82, 82, 85);
 }
 
+#players-form {
+    text-align: center;
+}
+
+#title-header {
+    font-family: "Bungee Spice", sans-serif;
+    font-weight: 400;
+    font-size: 3rem;
+    font-style: normal;
+}
+
+input {
+    border: 2px solid rgb(224, 100, 75);
+    background-color: rgba(223, 212, 221, 0.906);
+    font-size: 1rem;
+    text-align: center;
+    padding: 0.25rem;
+}
+
+#start-game-button {
+    background-color: aquamarine;
+    border-radius: 10px;
+    font-size: 1.5rem;
+    border: 2px solid rgb(224, 100, 75);
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
 .board-tile {
     background-color: rgb(125, 161, 125);
     width: 10rem;
