@@ -2,6 +2,18 @@
     background-color: rgb(82, 82, 85);
 }
 
+
+
+body {
+    cursor: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="72" height="48" viewBox="0 0 24 24"><path fill="none" stroke="%23D96E35" stroke-linecap="round" stroke-width="2.75" d="m3 3 18 18M21 3 3 21"></path></svg>'), auto;
+}
+
+.oCursor {
+    cursor: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="72" height="72" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="%23FFEDFF" stroke="%23D96E35" stroke-width="2.75" ></circle></svg>'), auto;
+}
+
+
+
 #players-form {
     text-align: center;
 }

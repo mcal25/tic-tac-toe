@@ -37,35 +37,46 @@ const displayController = (function () {
     let currentTurn = 'X';
     let gameBoard = document.getElementById('board-container');
     let boardTiles = document.querySelectorAll('.board-tile');
-    boardTiles.forEach((tile) => tile.addEventListener('click', function() {
-        tile.innerHTML = currentTurn;
-        gameboard.gameboardArr.splice(tile.id - 1, 1, currentTurn);
-        console.log(gameboard.gameboardArr);
-        currentTurn == 'X' ? currentTurn = 'O' : currentTurn = 'X';
-    }));
     const checkIfWinner = () => {
-        for (let i = 0; i < gameboardArr.length; i++) {
-            if (gameboardArr[0] == gameboardArr[1] && gameboardArr[1] == gameboardArr[2]) {
-                console.log(`VICTORY ATTAINED! The winner is ${gameboardArr[2]}`);
-            } else if (gameboardArr[3] == gameboardArr[4] && gameboardArr[4] == gameboardArr[5]) {
-                console.log(`VICTORY ATTAINED! The winner is ${gameboardArr[5]}`);
-            } else if (gameboardArr[6] == gameboardArr[7] && gameboardArr[7] == gameboardArr[8]) {
-                console.log(`VICTORY ATTAINED! The winner is ${gameboardArr[8]}`);
-            } else if (gameboardArr[0] == gameboardArr[3] && gameboardArr[3] == gameboardArr[6]) {
-                console.log(`VICTORY ATTAINED! The winner is ${gameboardArr[6]}`);
-            } else if (gameboardArr[1] == gameboardArr[4] && gameboardArr[4] == gameboardArr[7]) {
-                console.log(`VICTORY ATTAINED! The winner is ${gameboardArr[7]}`);
-            } else if (gameboardArr[2] == gameboardArr[5] && gameboardArr[5] == gameboardArr[8]) {
-                console.log(`VICTORY ATTAINED! The winner is ${gameboardArr[8]}`);
-            } else if (gameboardArr[2] == gameboardArr[4] && gameboardArr[4] == gameboardArr[6]) {
-                console.log(`VICTORY ATTAINED! The winner is ${gameboardArr[6]}`);
-            } else if (gameboardArr[0] == gameboardArr[4] && gameboardArr[4] == gameboardArr[8]) {
-                console.log(`VICTORY ATTAINED! The winner is ${gameboardArr[8]}`);
+        for (let i = 0; i < gameboard.gameboardArr.length; i++) {
+            if (gameboard.gameboardArr[0] == gameboard.gameboardArr[1] && gameboard.gameboardArr[1] == gameboard.gameboardArr[2] && gameboard.gameboardArr[2] != '') {
+                console.log(`VICTORY ATTAINED! The winner is ${gameboard.gameboardArr[2]}`);
+                return alert(`VICTORY ATTAINED! The winner is ${gameboard.gameboardArr[2]}`);
+            } else if (gameboard.gameboardArr[3] == gameboard.gameboardArr[4] && gameboard.gameboardArr[4] == gameboard.gameboardArr[5] && gameboard.gameboardArr[5] != '') {
+                console.log(`VICTORY ATTAINED! The winner is ${gameboard.gameboardArr[5]}`);
+                return alert(`VICTORY ATTAINED! The winner is ${gameboard.gameboardArr[5]}`);
+            } else if (gameboard.gameboardArr[6] == gameboard.gameboardArr[7] && gameboard.gameboardArr[7] == gameboard.gameboardArr[8] && gameboard.gameboardArr[8] != '') {
+                console.log(`VICTORY ATTAINED! The winner is ${gameboard.gameboardArr[8]}`);
+                return alert(`VICTORY ATTAINED! The winner is ${gameboard.gameboardArr[8]}`);
+            } else if (gameboard.gameboardArr[0] == gameboard.gameboardArr[3] && gameboard.gameboardArr[3] == gameboard.gameboardArr[6] && gameboard.gameboardArr[6] != '') {
+                console.log(`VICTORY ATTAINED! The winner is ${gameboard.gameboardArr[6]}`);
+                return alert(`VICTORY ATTAINED! The winner is ${gameboard.gameboardArr[6]}`);
+            } else if (gameboard.gameboardArr[1] == gameboard.gameboardArr[4] && gameboard.gameboardArr[4] == gameboard.gameboardArr[7] && gameboard.gameboardArr[7] != '') {
+                console.log(`VICTORY ATTAINED! The winner is ${gameboard.gameboardArr[7]}`);
+                return alert(`VICTORY ATTAINED! The winner is ${gameboard.gameboardArr[7]}`);
+            } else if (gameboard.gameboardArr[2] == gameboard.gameboardArr[5] && gameboard.gameboardArr[5] == gameboard.gameboardArr[8] && gameboard.gameboardArr[8] != '') {
+                console.log(`VICTORY ATTAINED! The winner is ${gameboard.gameboardArr[8]}`);
+                return alert(`VICTORY ATTAINED! The winner is ${gameboard.gameboardArr[8]}`);
+            } else if (gameboard.gameboardArr[2] == gameboard.gameboardArr[4] && gameboard.gameboardArr[4] == gameboard.gameboardArr[6] && gameboard.gameboardArr[6] != '') {
+                console.log(`VICTORY ATTAINED! The winner is ${gameboard.gameboardArr[6]}`);
+                return alert(`VICTORY ATTAINED! The winner is ${gameboard.gameboardArr[6]}`);
+            } else if (gameboard.gameboardArr[0] == gameboard.gameboardArr[4] && gameboard.gameboardArr[4] == gameboard.gameboardArr[8] && gameboard.gameboardArr[8] != '') {
+                console.log(`VICTORY ATTAINED! The winner is ${gameboard.gameboardArr[8]}`);
+                return alert(`VICTORY ATTAINED! The winner is ${gameboard.gameboardArr[8]}`);
             }
             // else if board is full then it's a tie
         }
     }
-    return {checkIfWinner};
+    boardTiles.forEach((tile) => tile.addEventListener('click', function () {
+        tile.innerHTML = currentTurn;
+        gameboard.gameboardArr.splice(tile.id - 1, 1, currentTurn);
+        console.log(gameboard.gameboardArr);
+        currentTurn == 'X' ? currentTurn = 'O' : currentTurn = 'X';
+        document.querySelector('body').classList.toggle('oCursor');
+        checkIfWinner();
+    }));
+
+    return { checkIfWinner };
 })();
 
 /*
